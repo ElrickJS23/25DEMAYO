@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDAD PERRO</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-fila">
+        <div class="grid-2">
+            <div>
+                <section class="res">
+                    <h1>NOMBRE</h1>
+                    <input type="text" id="nom">
+                    <h1>EDAD</h1>
+                    <input type="number" id="nro" min="1" max="20" step="1" value="1">
+                    <button id="btn">CALCULAR EDAD</button>
+                </section>
+            </div>
+            <div>
+                <section class="res">
+                    <h1>FORMULA DEL 7</h1>
+                    <div id="resultado7" class="t"></div>
+                    <h1>NUEVA FORMULA</h1>
+                    <div id="resultadoNEW" class="t"></div>
+                </section>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    <script language="javascript">
+        
+       //  FACTORIAL
+        var b=document.getElementById('btn');
+         b.addEventListener('click',calcularEDAD);
+         function calcularEDAD() 
+         {
+            var n=parseInt(document.getElementById('nro').value);
+            document.getElementById("resultado7").innerHTML = formula7 (n) +" años";
+            document.getElementById("resultadoNEW").innerHTML = formulaNEW (n)+" años";
+         }
+         function formula7 (n){
+            return n*7;
+         }
+         function formulaNEW (n){
+            var k = 16*Math.log(n)+31;
+            return k.toFixed(0);
+         }
+    </script>
+</body>
+</html>
